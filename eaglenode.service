@@ -1,0 +1,16 @@
+[Unit]
+Description=EagleNode Host Discord Bot
+After=network.target
+
+[Service]
+User=youruser
+Group=yourgroup
+WorkingDirectory=/path/to/bot
+EnvironmentFile=/path/to/.env
+ExecStart=/path/to/venv/bin/python /path/to/bot.py
+Restart=on-failure
+RestartSec=10
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target
